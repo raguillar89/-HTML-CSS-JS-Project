@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/gaming-remote.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+     <!----Font Poppins---->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+ 
+     <!----CDN Font Awesome---->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="app.js" defer></script>
+    <title>DevInGameStore</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1 class="title">Lista de Compras</h1>
+            <div id="toggle">
+                <i class="indicator"></i>
+            </div>
+        </header> 
+        <div id="lista">
+            <label for="item">Inserir Item na Lista</label>
+                <br>                
+            <input type="text" name="storeInput" id="sI" class="itemInput" placeholder="Insira um produto">
+                <br>    
+            <div class="bts">
+                <button class="btnAddItem" id="addItem">Adicionar Item</button>
+                <button class="btnAllList" id="allList" value="all">Lista (Tudo)</button>
+                <button class="btnBuyList" id="buyList" value="buy">Lista (Comprados)</button>
+                <button class="btnPendingList" id="pendingList" value="pending">Lista (Pendentes)</button>
+                <button class="btnClearList" id="clearList">Apagar Lista</button>
+            </div>              
+        </div>    
+        <div class="store-container">
+            <ul class="store-list" id="count"></ul>
+        </div>   
+        <div class="valorFinal">
+            <p class="tc">Total das Compras: <span type="number" id="disp">R$ 0.00</span></p>
+            <p class="ti">Total de Itens: <span id="countIt"></span></p>
+        </div>     
+        <footer>
+            
+        </footer>
+
+    </div>    
+</body>
+</html>

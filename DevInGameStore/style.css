@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    font-size: 12;
+    font-family: 'Multi', sans-serif;
+}
+
+body {
+    height: 100vh;
+    transition: 0.5s;
+    background-image: url(./img/imgWhite.jpeg);
+}
+
+body.active {
+    transition: 0.5s;
+    background-image: url(./img/imgBlack.jpg);
+}
+
+header{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #2081C3;
+    opacity: 0.95;
+    margin: auto;
+    color: black;
+}
+
+header.active {
+    transition: 0.5s;
+    background-color: #69A297;
+    color: white;
+}
+
+.title {
+    font-size: 1.3rem;
+    margin: auto;
+}
+
+/* Toggle */
+#toggle{
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 25px;
+    border-radius: 80px;
+    background: black;
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgb(0,0,0,0.1),
+                inset 0 8px 8px rgb(0,0,0,0.1)
+                inset 0 8px 8px rgb(0,0,0,0.1);
+}
+
+#toggle.active {
+    background-color: white;
+    box-shadow: inset 0 2px 60px rgba(0,0,0,0.1),
+                inset 0 2px 8px rgba(0,0,0,0.1),
+                inset 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#toggle .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255,255,255,0.2),
+                inset 0 -4px 4px rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+
+#toggle.active .indicator{
+    left: 20px;
+    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1),
+                inset 0 4px 4px rgba(255,255,255,1),
+                inset 0 -4px 4px rgba(255,255,255,1);
+}
+
+/* Box */
+#lista{
+    list-style-type: none;
+    font-size: 20px;
+    background-color: #63D2FF;
+    backdrop-filter: blur(10px);
+    opacity: 0.95;
+    -webkit-backdrop-filter: blur(10px);
+    border: solid 1px #91bbc81e;
+    color: black;
+    font-weight: bold;
+    margin: 20px 120px 0px 120px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#lista.active, .store-container.active{
+    transition: 0.5s;
+    background-color: #A3C9A8;
+    color: white;
+}
+
+.bts {
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    display: inline;
+    padding: 20px;
+    margin: 15px 15px 15px 15px;
+    outline: 0px;
+    border-radius: 3px;
+    min-width: 150px;
+    width: 50%;
+    min-height: 35px;
+}
+
+.store-container{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #63D2FF;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: solid 1px #c8d3d5;
+    color: black;
+    font-weight: bold;
+    margin: 20px 120px 0px 120px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px 15px 15px 15px;
+    opacity: 0.9;
+}
+
+.store-list{
+    list-style: none;
+    min-width: 20%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    display: inline-block;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#addItem, #allList, #buyList, #pendingList, #clearList {
+    font-size: 13px;
+    border: solid 1px #91aebe75;
+    padding: 5px;
+    margin: 15px 5px 5px 5px;
+    outline: 0px;
+    background-color: #449DD1;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    min-width: 150px;
+    width: 18%;
+    min-height: 35px;
+}
+
+#addItem.active, #allList.active, #buyList.active, #pendingList.active, #clearList.active {
+    transition: 0.5s;
+    background-color: #84B59F;
+    color: white;
+}
+
+#addItem:hover, #allList:hover, #buyList:hover, #pendingList:hover, 
+#clearList:hover, .trashBtn:hover, .cmpBtn:hover{
+    transition: 0.5s;
+    background-color: aquamarine;
+}
+
+#addItem.active:hover, #allList.active:hover, #buyList.active:hover, #pendingList.active:hover, #clearList.active:hover {
+    transition: 0.5s;
+    background-color: #153131;
+    color: white;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #c30010;
+    opacity: 0.5;
+}
+
+.item li{
+    flex: 1;
+    display: flex;
+}
+
+.trashBtn, .cmpBtn {
+    margin: 0px 10px 0px 0px;
+    background: #A4B8C4;
+    color: black;
+    border: black;
+    padding: 7px;
+    cursor: pointer;
+    font-size: 10px;
+    border-radius: 50%;
+}
+
+.item {
+    display: flex;
+    margin: 8px;
+}
+
+.valorFinal{    
+    font-size: 16px;
+    background-color: #2081C3;
+    margin: 20px 120px 0px 120px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    border: solid 1px #91bbc81e;
+    font-weight: bold;
+}
+
+.valorFinal.active{    
+    transition: 0.5s;
+    background-color: #84B59F;
+    color: white;
+}
+
+.valorFinal, p{
+    font-weight: bold;
+    color: black;    
+}
+
+.valorFinal.active, .tc.active, .ti.active{
+    color: white;
+}
+
+.valorFinal, #disp{
+    font-weight: bold;
+    color: #c30010;    
+}
